@@ -38,16 +38,6 @@ io.on("connection", (socket) => {
   });
 });
 
-//Database
-mongoose
-  .connect(process.env.MONGO_URL)
-  .then(() => console.log("Database Connected"))
-  .catch((err) => console.log(err));
-
-//api routes
-app.use("/api/messages", require("./routes/message"));
-app.use("/api/user", require("./routes/auth"));
-
 server.listen(3001, () => {
   console.log("Server running on port 3001");
 });
